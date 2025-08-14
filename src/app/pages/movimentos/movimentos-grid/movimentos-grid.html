@@ -1,0 +1,29 @@
+<div class="card mb-4">
+  <div class="card-body">
+
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Mês</th>
+          <th>Ano</th>
+          <th>Produto</th>
+          <th>COSIF</th>
+          <th>Valor</th>
+          <th>Descrição</th>
+          <th>Data Movimento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of movimentos">
+          <td>{{ m.mes }}</td>
+          <td>{{ m.ano }}</td>
+          <td>{{ m.produtoId }}</td>
+          <td>{{ m.cosifId }}</td>
+          <td>{{ m.valor }}</td>
+          <td>{{ m.descricao }}</td>
+          <td>{{ m.dtMovimento | date:'dd/MM/yyyy'"  }}</td>
+        </tr>
+      </tbody>
+  </table>
+  </div>
+</div>
