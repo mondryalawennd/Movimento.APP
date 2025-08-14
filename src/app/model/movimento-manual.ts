@@ -1,11 +1,12 @@
 export interface MovimentoManual{
-    id?: string;
-    mes: number;
-    ano: number;
-    produtoId: string;
-    cosifId: string;
-    valor: number;
-    descricao: string;
+
+    mes?: number;
+    ano?: number;
+    codigoProduto: string;
+    codigoCosif: string;
+    valorMovimento?: number;
+    descricaoProduto?: string;
+    descricaoMovimento?: string;
     dataMovimento?: Date;
     numeroLancamento?: number;
 }

@@ -1,5 +1,5 @@
 export interface ProdutoCosif{
-    id?: string;
+    codigoCosif?: string;
     codigoProduto: string;
     codigoClassificacao: string;
 }

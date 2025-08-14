@@ -1,10 +1,10 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { Header } from './shared/components/header/header';
 import { Nav } from './shared/components/nav/nav';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app.routes';
 import { FormsModule } from '@angular/forms';
+
 
 @Component({
   standalone: true,
@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
+
 export class App {
   title = 'Movimentos Manuais';
 }

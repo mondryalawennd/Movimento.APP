@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MovimentoManual } from '../model/movimento-manual';
 import { Produto } from '../model/produto';
@@ -11,21 +11,15 @@ export class MovimentosService {
   
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<MovimentoManual[]> {
-    return this.http.get<MovimentoManual[]>(this.apiUrl);
+
+  carregarMovimentos(): Observable<MovimentoManual[]> {
+    return this.http.get<MovimentoManual[]>(`${this.apiUrl}/ConsultarMovimentos`);
   }
 
-  salvar(movimento: MovimentoManual): Observable<any> {
-    return this.http.post(this.apiUrl, movimento);
+  salvarMovimento(movimento: MovimentoManual): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/InserirMovimento`, movimento);
   }
   
-  listarProdutos(): Observable<any[]> {
-    return this.http.get<any[]>('/api/produtos');
-  }
-  
-  listarCosifs(codigoProduto: string): Observable<{ data: Produto; message?: string }> {
-    const url = `${this.apiUrl}/BuscarVenda/${codigoProduto}`;
-    return this.http.get<{ data: Produto; message?: string }>(url);
-  }
+ 
   
 }
